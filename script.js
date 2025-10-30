@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-
+    
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
@@ -8,22 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const taskText = taskInput.value.trim();
 
         if (taskText === "") {
-            alert("Please enter a task before adding!");
+            alert("Please enter a task!");
             return;
         }
 
         const li = document.createElement('li');
         li.textContent = taskText;
 
-        const removeBtn = document.createElement('button');
-        removeBtn.textContent = "Remove";
-        removeBtn.className = 'remove-btn';
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "Remove";
+        removeButton.className = 'remove-btn';
 
-        removeBtn.onclick = function() {
+        removeButton.onclick = function() {
             taskList.removeChild(li);
         };
 
-        li.appendChild(removeBtn);
+        li.appendChild(removeButton);
 
         taskList.appendChild(li);
 
@@ -37,5 +37,4 @@ document.addEventListener('DOMContentLoaded', function() {
             addTask();
         }
     });
-
 });
